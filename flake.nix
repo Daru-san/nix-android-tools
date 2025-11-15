@@ -15,9 +15,9 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        packages = {
-          dumpyara = pkgs.callPackage ./dumpyara.nix { };
-          aospdtgen = pkgs.callPackage ./aospdtgen.nix { };
+        packages = rec {
+          dumpyara = pkgs.callPackage ./dumpyara.nix { inherit sebaubuntu_libs; };
+          aospdtgen = pkgs.callPackage ./aospdtgen.nix { inherit sebaubuntu_libs; };
           sebaubuntu_libs = pkgs.callPackage ./sebaubuntu_libs.nix { };
         };
       }

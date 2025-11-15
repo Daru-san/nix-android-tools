@@ -2,6 +2,7 @@
   lib,
   python3,
   fetchFromGitHub,
+  sebaubuntu_libs,
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -20,15 +21,17 @@ python3.pkgs.buildPythonApplication rec {
     python3.pkgs.poetry-core
   ];
 
-  dependencies = with python3.pkgs; [
-    brotli
-    liblp
-    lz4
-    protobuf
-    py7zr
-    sebaubuntu-libs
-    zstandard
-  ];
+  dependencies =
+    with python3.pkgs;
+    [
+      brotli
+      liblp
+      lz4
+      protobuf
+      py7zr
+      zstandard
+    ]
+    ++ [ sebaubuntu_libs ];
 
   pythonImportsCheck = [
     "dumpyara"

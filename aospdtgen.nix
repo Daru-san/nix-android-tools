@@ -2,6 +2,7 @@
   lib,
   python3,
   fetchFromGitHub,
+  sebaubuntu_libs,
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -20,11 +21,13 @@ python3.pkgs.buildPythonApplication rec {
     python3.pkgs.poetry-core
   ];
 
-  dependencies = with python3.pkgs; [
-    gitpython
-    jinja2
-    sebaubuntu-libs
-  ];
+  dependencies =
+    with python3.pkgs;
+    [
+      gitpython
+      jinja2
+    ]
+    ++ [ sebaubuntu_libs ];
 
   pythonImportsCheck = [
     "aospdtgen"

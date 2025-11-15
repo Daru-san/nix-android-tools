@@ -5,16 +5,16 @@
   sebaubuntu_libs,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+python3.pkgs.buildPythonApplication {
   pname = "dumpyara";
-  version = "1.0.10";
+  version = "1.0.10-unstable-2025-11-14";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "sebaubuntu-python";
     repo = "dumpyara";
-    rev = "v${version}";
-    hash = "sha256-lDoVBP1hmRx5E3kTblj2mB4Nsu71UFV6KQ8J41ODK3c=";
+    rev = "e13873305a4466c2623c555ec60feb28a11cad6e";
+    hash = "sha256-AYOkUQ0mEd14OpxXC+36kBB3/j6LWq6RNalv82Ev/Dk=";
   };
 
   build-system = [

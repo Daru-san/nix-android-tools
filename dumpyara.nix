@@ -7,14 +7,14 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "dumpyara";
-  version = "1.0.9";
+  version = "1.0.10";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "sebaubuntu-python";
     repo = "dumpyara";
     rev = "v${version}";
-    hash = "sha256-Hv0tV3jha8QM7WduNv75dPtmYGuAwvwrugX7sOrUOYA=";
+    hash = "sha256-lDoVBP1hmRx5E3kTblj2mB4Nsu71UFV6KQ8J41ODK3c=";
   };
 
   build-system = [

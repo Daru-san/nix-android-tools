@@ -18,6 +18,7 @@
         packages = {
           dumpyara = pkgs.callPackage ./dumpyara.nix { };
           aospdtgen = pkgs.callPackage ./aospdtgen.nix { };
+          sebaubuntu_libs = pkgs.callPackage ./sebaubuntu_libs.nix { };
         };
       }
     );

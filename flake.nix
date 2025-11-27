@@ -22,6 +22,7 @@
           unpackbootimg = pkgs.callPackage ./unpackbootimg.nix { };
           twrpdtgen = pkgs.callPackage ./twrpdtgen.nix { inherit sebaubuntu_libs; };
           twrpdtgen_v2 = pkgs.callPackage ./twrpdtgen_v2.nix { inherit sebaubuntu_libs; };
+          updater = pkgs.callPackage ./scripts/default.nix { };
         };
       }
     );

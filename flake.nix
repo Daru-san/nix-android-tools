@@ -20,6 +20,7 @@
           aospdtgen = pkgs.callPackage ./aospdtgen.nix { inherit sebaubuntu_libs; };
           sebaubuntu_libs = pkgs.callPackage ./sebaubuntu_libs.nix { };
           unpackbootimg = pkgs.callPackage ./unpackbootimg.nix { };
+          twrpdtgen = pkgs.callPackage ./twrpdtgen.nix { inherit sebaubuntu_libs; };
         };
       }
     );

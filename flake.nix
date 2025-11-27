@@ -24,6 +24,11 @@
           twrpdtgen_v2 = pkgs.callPackage ./twrpdtgen_v2.nix { inherit sebaubuntu_libs; };
           updater = pkgs.callPackage ./scripts/default.nix { };
         };
+        devShells.default = pkgs.mkShell {
+          packages = [
+            self.packages.${system}.updater
+          ];
+        };
       }
     );
 }

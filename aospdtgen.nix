@@ -7,14 +7,14 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "aospdtgen";
-  version = "1.1.1";
+  version = "1.2.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "sebaubuntu-python";
     repo = "aospdtgen";
     rev = "v${version}";
-    hash = "sha256-ojO5C+yo0t2nulSSRAfDRJq7LkoJdwF/OcJwzCdnyh4=";
+    hash = "sha256-5ZU7MTbh/6iaoFKXTlAFrmIamVGsk+bYM+Nkse09t0o=";
   };
 
   build-system = [

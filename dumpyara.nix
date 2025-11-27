@@ -3,6 +3,7 @@
   python3,
   fetchFromGitHub,
   sebaubuntu_libs,
+  nix-update-script,
 }:
 
 python3.pkgs.buildPythonApplication {
@@ -36,6 +37,14 @@ python3.pkgs.buildPythonApplication {
   pythonImportsCheck = [
     "dumpyara"
   ];
+
+  passthru = {
+    updateScript = nix-update-script {
+      extraArgs = [
+        "--version=branch"
+      ];
+    };
+  };
 
   meta = {
     description = "Android firmware dumper, rewritten in Python";

@@ -3,9 +3,10 @@
   python3,
   fetchFromGitHub,
   sebaubuntu_libs,
+  nix-update-script,
 }:
 
-python3.pkgs.buildPythonApplication rec {
+python3.pkgs.buildPythonApplication {
   pname = "twrpdtgen-v2";
   version = "1.1.1-unstable-2024-12-27";
   pyproject = true;
@@ -31,6 +32,14 @@ python3.pkgs.buildPythonApplication rec {
   pythonImportsCheck = [
     "twrpdtgen_v2"
   ];
+
+  passthru = {
+    updateScript = nix-update-script {
+      extraArgs = [
+        "--version=branch"
+      ];
+    };
+  };
 
   meta = {
     description = "LineageOS device tree generator";

@@ -3,6 +3,7 @@
   python3,
   fetchFromGitHub,
   sebaubuntu_libs,
+  nix-update-script,
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -32,6 +33,10 @@ python3.pkgs.buildPythonApplication rec {
   pythonImportsCheck = [
     "aospdtgen"
   ];
+
+  passthru = {
+    updateScript = nix-update-script { };
+  };
 
   meta = {
     description = "LineageOS device tree generator";

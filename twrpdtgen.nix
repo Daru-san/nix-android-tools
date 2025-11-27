@@ -4,6 +4,7 @@
   fetchFromGitHub,
   cpio,
   sebaubuntu_libs,
+  nix-update-script,
 }:
 
 python3.pkgs.buildPythonApplication {
@@ -36,6 +37,14 @@ python3.pkgs.buildPythonApplication {
   pythonImportsCheck = [
     "twrpdtgen"
   ];
+
+  passthru = {
+    updateScript = nix-update-script {
+      extraArgs = [
+        "--version=branch"
+      ];
+    };
+  };
 
   meta = {
     description = "A Python library/script to automatically generate TWRP-compatible device tree from a boot/recovery image";

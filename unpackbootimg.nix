@@ -2,6 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  nix-update-script,
 }:
 
 stdenv.mkDerivation {
@@ -26,6 +27,14 @@ stdenv.mkDerivation {
 
     runHook postBuild
   '';
+
+  passthru = {
+    updateScript = nix-update-script {
+      extraArgs = [
+        "--version=branch"
+      ];
+    };
+  };
 
   meta = {
     description = "Tools to work with Android boot images";

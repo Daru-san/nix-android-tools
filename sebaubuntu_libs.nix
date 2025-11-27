@@ -2,6 +2,7 @@
   lib,
   python3,
   fetchFromGitHub,
+  nix-update-script,
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -36,6 +37,10 @@ python3.pkgs.buildPythonApplication rec {
   pythonImportsCheck = [
     "sebaubuntu_libs"
   ];
+
+  passthru = {
+    updateScript = nix-update-script { };
+  };
 
   meta = {
     description = "SebaUbuntu's shared libs";

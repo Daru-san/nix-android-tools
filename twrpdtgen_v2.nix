@@ -7,7 +7,7 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "twrpdtgen-v2";
-  version = "unstable-2024-12-27";
+  version = "1.1.1-unstable-2024-12-27";
   pyproject = true;
 
   src = fetchFromGitHub {

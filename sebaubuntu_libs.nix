@@ -6,14 +6,14 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "sebaubuntu-libs";
-  version = "1.6.0";
+  version = "1.6.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "sebaubuntu-python";
     repo = "sebaubuntu_libs";
     rev = "v${version}";
-    hash = "sha256-V+9z4Q4D40AfVgSXW05EfZhctA+EIuS8xGSQkBjNGTQ=";
+    hash = "sha256-Fq3g/xDu4/W+2x6+wCNTPgvGQNP6jiHWWZXGkcui9PM=";
   };
 
   build-system = [

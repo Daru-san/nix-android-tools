@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation {
   pname = "android-unpackbootimg";
-  version = "unstable-2023-04-05";
+  version = "0-unstable-2023-04-05";
 
   src = fetchFromGitHub {
     owner = "anestisb";
